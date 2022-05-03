@@ -91,7 +91,11 @@
 
 #ifndef __DOXYGEN__
 #ifndef __ATTR_CONST__
+#ifdef __clang__
+#define __ATTR_CONST__
+#else
 #define __ATTR_CONST__ __attribute__((__const__))
+#endif
 #endif
 
 #ifndef __ATTR_PROGMEM__
